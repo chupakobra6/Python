@@ -9,7 +9,14 @@ def main():
     2 - Просмотр статистики преступлений: вызов функции ReadnWrite(path)
     """
     print("Выберите операцию:\n 1 - Добавить город и совершённые преступления\n 2 - Просмотр статистики преступлений")
-    choice = int(input())
+
+    choice = 0
+    
+    try:
+        choice = int(input())
+    except:
+        print("Введён неверный номер операции")
+        main()
 
     if choice == 1:
         dataWrite()

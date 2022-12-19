@@ -11,7 +11,13 @@ def main():
     """
     print("Выберите операцию:\n 1- Добавить информацию о товарах на склад (наименование, кол-во, стоимость)\n 2 - Заказать товар")
 
-    choice = int(input())
+    choice = 0
+
+    try:
+        choice = int(input())
+    except:
+        print("Введён неверный номер операции")
+        main()
 
     if choice == 1:
         dataWrite()
